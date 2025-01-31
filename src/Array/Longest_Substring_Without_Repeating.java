@@ -20,7 +20,7 @@ public class Longest_Substring_Without_Repeating {
 
             }
             else{
-                list.remove(0);
+                list.removeFirst();
                 start++;
             }
 
