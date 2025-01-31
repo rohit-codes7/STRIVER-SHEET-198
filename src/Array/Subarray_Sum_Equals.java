@@ -1,6 +1,9 @@
 package Array;
 
 import java.util.Arrays;
+import java.util.HashMap;
+
+
 
 public class Subarray_Sum_Equals {
     public static void main(String[] args) {
@@ -10,25 +13,33 @@ public class Subarray_Sum_Equals {
     }
 
     public static int subarraySum(int[] nums, int k) {
-        Arrays.sort(nums); // Sort the array
-        int start = 0;
-        int end = nums.length - 1; // End pointer should be at the last index
+
+//        int count = 0;
+//        for (int i = 0; i < nums.length; i++) {
+//            int sum = 0;
+//            for (int j = i; j < nums.length; j++) {
+//                sum+=nums[j];
+//                if (k==sum) count++;
+//
+//            }
+//        }
+//        return count;
         int count = 0;
+        int prefixSum = 0;
+        HashMap<Integer, Integer> sumFrequency = new HashMap<>();
 
-        while (start < end) {
-            int sum = nums[start] + nums[end];
+        sumFrequency.put(0, 1);
 
-            if (sum == k) { // Found a valid pair
-                count++;
-                start++; // Move left pointer forward
-                end--;   // Move right pointer backward
-            } else if (sum < k) { // Increase sum
-                start++;
-            } else { // Decrease sum
-                end--;
+        for (int num : nums) {
+            prefixSum += num;
 
+            if (sumFrequency.containsKey(prefixSum - k)) {
+                count += sumFrequency.get(prefixSum - k);
             }
+
+            sumFrequency.put(prefixSum, sumFrequency.getOrDefault(prefixSum, 0) + 1);
         }
+
         return count;
     }
 
