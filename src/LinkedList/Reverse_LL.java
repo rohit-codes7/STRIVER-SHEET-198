@@ -8,7 +8,7 @@ public class Reverse_LL {
 
     public static void main(String[] args) {
 
-        LinkedList<Integer> list = new LinkedList<>();
+
       ListNode head = new ListNode(1);
         head.next = new ListNode(2);
         head.next.next = new ListNode(3);
