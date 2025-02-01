@@ -1,9 +1,5 @@
 package LinkedList;
 
-
-import java.util.LinkedList;
-
-
 public class Reverse_LL {
 
     public static void main(String[] args) {
