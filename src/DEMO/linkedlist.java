@@ -1,5 +1,7 @@
 package DEMO;
 
+import LinkedList.Node;
+
 public class linkedlist {
     Node head = null;
     Node tail = null;

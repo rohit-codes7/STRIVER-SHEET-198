@@ -1,4 +1,4 @@
-package DEMO;
+package LinkedList;
 
 public class Middle_LL {
 
