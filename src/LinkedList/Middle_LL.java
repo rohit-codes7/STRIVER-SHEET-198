@@ -3,24 +3,24 @@ package LinkedList;
 public class Middle_LL {
 
     public static void main(String[] args) {
-        Node head = new Node(1);
-        head.next = new Node(2);
-        head.next.next = new Node(3);
-        head.next.next.next = new Node(4);
-        head.next.next.next.next = new Node(5);
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
 
         // Find the middle node
-        Node middleNode = MiddleLL(head);
+        ListNode middleNode = MiddleLL(head);
 
         // Display the value of the middle node
         System.out.println("The middle node value is: " + middleNode.data);
 
     }
 
-    static Node MiddleLL(Node head){
+    static ListNode MiddleLL(ListNode head){
         if (head==null || head.next==null) return head;
-        Node fast = head;
-        Node slow = head;
+        ListNode fast = head;
+        ListNode slow = head;
 
         while(fast.next!=null && fast!=null){
             fast = fast.next.next;
@@ -29,14 +29,14 @@ public class Middle_LL {
         return slow;
     }
 
-    static Node findMiddleOfLL(Node head) {                 // T.C -> O(N+N/2)  S.C -> 0(1)
+    static ListNode findMiddleOfLL(ListNode head) {                 // T.C -> O(N+N/2)  S.C -> 0(1)
 
         if (head == null || head.next == null) {
             return head;
         }
 
         // step 1 : Count the nodes
-        Node temp = head;
+        ListNode temp = head;
         int count = 0;
         while (temp != null) {
             count++;
