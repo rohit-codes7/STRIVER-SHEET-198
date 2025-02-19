@@ -2,7 +2,7 @@ package Recursion;
 import java.util.*;
 public class Subset_II {
    static List<List<Integer>> result = new ArrayList<>();
-    public static void main(String[] args) {
+    public static void main(String[] args){
         int [] nums ={1,2,2};
         System.out.println(subsetsWithDup(nums));
 
