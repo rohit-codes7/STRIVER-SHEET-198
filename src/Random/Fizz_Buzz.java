@@ -1,7 +1,7 @@
 package Random;
 import java.util.*;
 
-
+// maintain the streak
 public class Fizz_Buzz {
     public static void main(String[] args) {
         int n = 5;
