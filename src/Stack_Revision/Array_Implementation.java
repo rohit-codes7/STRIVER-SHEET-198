@@ -1,7 +1,5 @@
 package Stack_Revision;
 
-import java.util.EmptyStackException;
-import java.util.Stack;
 
 public class Array_Implementation {
     private static class Stack {
@@ -42,9 +40,9 @@ public class Array_Implementation {
 
         int pop() {
             if (isEmpty()) throw new RuntimeException("Stack is Empty");
-            else{
-                int temp = arr[size-1];
-                arr[size-1] = 0;
+            else {
+                int temp = arr[size - 1];
+                arr[size - 1] = 0;
                 size--;
                 return temp;
 
@@ -53,11 +51,25 @@ public class Array_Implementation {
 
         }
 
+        void display() {
+            for (var st : arr) {
+                System.out.print(st + " ");
+            }
+            System.out.println();
+        }
+
     }
 
     public static void main(String[] args) {
         Stack st = new Stack();
-        System.out.println(st.peek());
+        st.push(1);
+        st.push(2);
+        st.push(3);
+        st.push(4);
+        st.push(5);
+//        st.pop();
+
+        st.display();
     }
 
 }
